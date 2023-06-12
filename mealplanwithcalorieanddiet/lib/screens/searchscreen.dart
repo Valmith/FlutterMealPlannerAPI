@@ -4,12 +4,14 @@ import '../services/services.dart';
 import 'mealscreen.dart';
 
 class SearchScreen extends StatefulWidget {
+  const SearchScreen({super.key});
+
   @override
   _SearchScreenState createState() => _SearchScreenState();
 }
 
 class _SearchScreenState extends State<SearchScreen> {
-  List<String> _diets = [
+  final List<String> _diets = [
     'None',
     'Gluten Free',
     'Ketogenic',
@@ -41,7 +43,7 @@ class _SearchScreenState extends State<SearchScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           image: DecorationImage(
             image: NetworkImage(
                 'https://images.unsplash.com/photo-1482049016688-2d3e1b311543?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=353&q=80'),
@@ -50,8 +52,8 @@ class _SearchScreenState extends State<SearchScreen> {
         ),
         child: Center(
           child: Container(
-            margin: EdgeInsets.symmetric(horizontal: 30),
-            padding: EdgeInsets.symmetric(horizontal: 30),
+            margin: const EdgeInsets.symmetric(horizontal: 30),
+            padding: const EdgeInsets.symmetric(horizontal: 30),
             height: MediaQuery.of(context).size.height * 0.55,
             decoration: BoxDecoration(
               color: Colors.white.withOpacity(0.9),
@@ -60,7 +62,7 @@ class _SearchScreenState extends State<SearchScreen> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                Text(
+                const Text(
                   'My Daily Meal Planner',
                   style: TextStyle(
                     fontSize: 32,
@@ -68,7 +70,7 @@ class _SearchScreenState extends State<SearchScreen> {
                     letterSpacing: 2,
                   ),
                 ),
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
                 RichText(
                   text: TextSpan(
                     style:
@@ -81,7 +83,7 @@ class _SearchScreenState extends State<SearchScreen> {
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      TextSpan(
+                      const TextSpan(
                         text: 'cal',
                         style: TextStyle(fontWeight: FontWeight.w600),
                       ),
@@ -104,21 +106,21 @@ class _SearchScreenState extends State<SearchScreen> {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 30),
+                  padding: const EdgeInsets.symmetric(horizontal: 30),
                   child: DropdownButtonFormField<String>(
                     items: _diets.map((String priority) {
                       return DropdownMenuItem<String>(
                         value: priority,
                         child: Text(
                           priority,
-                          style: TextStyle(
+                          style: const TextStyle(
                             color: Colors.black,
                             fontSize: 18,
                           ),
                         ),
                       );
                     }).toList(),
-                    decoration: InputDecoration(
+                    decoration: const InputDecoration(
                       labelText: 'Diet',
                       labelStyle: TextStyle(fontSize: 18),
                     ),
@@ -130,16 +132,16 @@ class _SearchScreenState extends State<SearchScreen> {
                     value: _diet,
                   ),
                 ),
-                SizedBox(height: 30),
+                const SizedBox(height: 30),
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                    padding: EdgeInsets.symmetric(horizontal: 60, vertical: 8),
-                    primary: Theme.of(context).primaryColor,
+                    padding: const EdgeInsets.symmetric(horizontal: 60, vertical: 8), backgroundColor: Theme.of(context).primaryColor,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(15),
                     ),
                   ),
-                  child: Text(
+                  onPressed: _searchMealPlan,
+                  child: const Text(
                     'Search',
                     style: TextStyle(
                       color: Colors.black,
@@ -147,7 +149,6 @@ class _SearchScreenState extends State<SearchScreen> {
                       fontWeight: FontWeight.w600,
                     ),
                   ),
-                  onPressed: _searchMealPlan,
                 ),
               ],
             ),

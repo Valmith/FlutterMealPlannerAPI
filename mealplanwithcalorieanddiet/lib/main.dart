@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:mealplanwithcalorieanddiet/screens/searchscreen.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(const MyApp());
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -12,7 +14,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primaryColor: Colors.orange[500],
       ),
-      home: SearchScreen(),
+      home: const SearchScreen(),
     );
   }
 }

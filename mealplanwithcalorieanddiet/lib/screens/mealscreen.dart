@@ -8,7 +8,7 @@ import '../services/services.dart';
 class MealsScreen extends StatefulWidget {
   //It returns a final mealPlan variable
   final MealPlan mealPlan;
-  MealsScreen({required this.mealPlan});
+  const MealsScreen({super.key, required this.mealPlan});
 @override
   _MealsScreenState createState() => _MealsScreenState();
 }
@@ -20,59 +20,59 @@ The child is a column widget that returns nutrient information in Rows
 _buildTotalNutrientsCard() {
     return Container(
       height: 140,
-      margin: EdgeInsets.all(20),
-      padding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+      margin: const EdgeInsets.all(20),
+      padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
       decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(15),
-          boxShadow: [
+          boxShadow: const [
             BoxShadow(
                 color: Colors.black12, offset: Offset(0, 2), blurRadius: 6)
           ]),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          Text(
+          const Text(
             'Total Nutrients',
             style: TextStyle(
               fontSize: 24,
               fontWeight: FontWeight.w600,
             ),
           ),
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
               Text(
                 'Calories: ${widget.mealPlan.calories.toString()} cal',
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.w600,
                 ),
               ),
               Text(
                 'Protein: ${widget.mealPlan.protein.toString()} g',
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.w600,
                 ),
               ),
             ],
           ),
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
               Text(
                 'Fat: ${widget.mealPlan.fat.toString()} g',
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.w600,
                 ),
               ),
               Text(
                 'Carb: ${widget.mealPlan.carbs.toString()} cal',
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.w600,
                 ),
@@ -111,8 +111,8 @@ _buildTotalNutrientsCard() {
             Container(
               height: 220,
               width: double.infinity,
-              margin: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-              padding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+              margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+              padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
               decoration: BoxDecoration(
                   color: Colors.white,
                   image: DecorationImage(
@@ -120,22 +120,22 @@ _buildTotalNutrientsCard() {
                     fit: BoxFit.cover,
                   ),
                   borderRadius: BorderRadius.circular(15),
-                  boxShadow: [
+                  boxShadow: const [
                     BoxShadow(
                         color: Colors.black12, offset: Offset(0, 2), blurRadius: 6)
                   ]),
             ),
             //Second widget is a Container that has 2 text widgets 
             Container(
-              margin: EdgeInsets.all(60),
-              padding: EdgeInsets.all(10),
+              margin: const EdgeInsets.all(60),
+              padding: const EdgeInsets.all(10),
               color: Colors.white70,
               child: Column(
                 children: <Widget>[
                   Text(
                     //mealtype
                     mealType,
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 30,
                       fontWeight: FontWeight.bold,
                       letterSpacing: 1.5
@@ -144,7 +144,7 @@ _buildTotalNutrientsCard() {
                   Text(
                     //mealtitle
                     meal.title,
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 24,
                       fontWeight: FontWeight.w600
                     ),
@@ -176,7 +176,7 @@ _mealType(int index) {
   Widget build(BuildContext context) {
     return Scaffold(
       //has an appBar
-      appBar: AppBar(title: Text('Your Meal Plan')),
+      appBar: AppBar(title: const Text('Your Meal Plan')),
       //and body as a ListView builder
       body: ListView.builder(
         /*

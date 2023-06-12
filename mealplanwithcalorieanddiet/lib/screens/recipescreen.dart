@@ -3,13 +3,14 @@
 import 'package:flutter/material.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
+
 import '../models/recipemodel.dart';
 
 class RecipeScreen extends StatefulWidget {
   //This stateful widget page takes in String mealType and Recipe recipe
   final String mealType;
   final Recipe recipe;
-RecipeScreen({required this.mealType, required this.recipe});
+const RecipeScreen({super.key, required this.mealType, required this.recipe});
 @override
   _RecipeScreenState createState() => _RecipeScreenState();
 }
