@@ -10,7 +10,7 @@ class RecipeScreen extends StatefulWidget {
   //This stateful widget page takes in String mealType and Recipe recipe
   final String mealType;
   final Recipe recipe;
-const RecipeScreen({super.key, required this.mealType, required this.recipe});
+const RecipeScreen({key,  this.mealType, this.recipe});
 @override
   _RecipeScreenState createState() => _RecipeScreenState();
 }

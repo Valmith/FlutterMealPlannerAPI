@@ -5,7 +5,7 @@ class MealPlan {
   final List<Meal> meals;
   final double calories, carbs, fat, protein;
 MealPlan({
-    required this.meals, required this.calories, required this.carbs, required this.fat, required this.protein
+     this.meals,  this.calories,  this.carbs,  this.fat,  this.protein
 });
 /*
 The factory constructor iterates over the list of meals and our decoded mealplan

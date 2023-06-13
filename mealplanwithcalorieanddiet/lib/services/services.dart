@@ -14,13 +14,13 @@ class ApiService {
   static final ApiService instance = ApiService._instantiate();
 //Add base URL for the spoonacular API, endpoint and API Key as a constant
   final String _baseURL = "api.spoonacular.com";
-  static const String API_KEY ="1f9d617ba13041859ea773423b0e6291";
+  static const String API_KEY ="e1ea9d28071547329684438575c5d5c6";
 //We create async function to generate meal plan which takes in
   //timeFrame, targetCalories, diet and apiKey
 //If diet is none, we set the diet into an empty string
 //timeFrame parameter sets our meals into 3 meals, which are daily meals.
   //that's why it's set to day
-Future<MealPlan> generateMealPlan({required int targetCalories, required String diet}) async {
+Future<MealPlan> generateMealPlan({ int targetCalories,  String diet}) async {
     //check if diet is null
     if (diet == 'None') diet = '';
     Map<String, String> parameters = {
