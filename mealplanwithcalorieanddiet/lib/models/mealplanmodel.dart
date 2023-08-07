@@ -1,12 +1,14 @@
 import 'mealmodel.dart';
 
 class MealPlan {
-  //MealPlan class has a list of meals and nutritional info about the meal plan
-  final List<Meal> meals;
-  final double calories, carbs, fat, protein;
 MealPlan({
-     this.meals,  this.calories,  this.carbs,  this.fat,  this.protein
+    required this.meals,
+    required this.calories,
+    required this.carbs,
+    required this.fat,
+    required this.protein
 });
+
 /*
 The factory constructor iterates over the list of meals and our decoded mealplan
 data and creates a list of meals.
@@ -24,4 +26,9 @@ factory MealPlan.fromMap(Map<String, dynamic> map) {
       protein: map['nutrients']['protein'],
     );
   }
+
+  //MealPlan class has a list of meals and nutritional info about the meal plan
+  final List<Meal> meals;
+
+  final double calories, carbs, fat, protein;
 }

@@ -126,7 +126,7 @@ class _SearchScreenState extends State<SearchScreen> {
                     ),
                     onChanged: (value) {
                       setState(() {
-                        _diet = value;
+                        _diet = value!;
                       });
                     },
                     value: _diet,

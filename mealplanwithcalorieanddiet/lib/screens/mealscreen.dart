@@ -8,13 +8,13 @@ import '../services/services.dart';
 class MealsScreen extends StatefulWidget {
   //It returns a final mealPlan variable
   final MealPlan mealPlan;
-  const MealsScreen({key, this.mealPlan});
+  const MealsScreen({key, required this.mealPlan});
 @override
   _MealsScreenState createState() => _MealsScreenState();
 }
 class _MealsScreenState extends State<MealsScreen> {
 /*
-Returns aContainer with Curved edges and a BoxShadow. 
+Returns a Container with Curved edges and a BoxShadow. 
 The child is a column widget that returns nutrient information in Rows
  */
 _buildTotalNutrientsCard() {
@@ -89,7 +89,7 @@ _buildTotalNutrientsCard() {
     String mealType = _mealType(index);
     //We return stack widget with center alignment
     return GestureDetector(
-      //We wrap our stack with gesture detector to navigate to webview page
+      //We wrap our stack with gesture detector to navigate to the webview page
 /*
       The async onTap function will fetch the recipe by id using the 
       fetchRecipe method.
